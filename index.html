@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shawn Bauguess Portfolio</title>
     <link rel="stylesheet" href="style.css" />
-    <script  src="script.js" defer></script>
+    
 
   </head>
   <body>
@@ -390,5 +390,20 @@
         </section>
       </div>
     </main>
+    <script>const scroller = document.querySelector(".container");
+      scroller.addEventListener("scroll", (event) => {
+          const position = scroller.scrollTop;
+          document.querySelectorAll('section').forEach(function(section) {
+          let target = section.offsetTop - 100;
+          let id = section.getAttribute('id');
+          if (position >= target) {
+              document.querySelectorAll('#navigation > ul > li > a').forEach(function(a) {
+                a.classList.remove('active');
+              });
+              document.querySelector('#navigation > ul > li > a[href="#' + id + '"]').classList.add('active');
+            }
+          });
+        });
+      </script>
   </body>
 </html>
