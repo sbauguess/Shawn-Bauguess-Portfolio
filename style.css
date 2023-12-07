@@ -1,0 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+:root {
+  --main: darkblue;
+  --secondary: darkorchid;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+.menu {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to bottom, var(--main), var(--secondary));
+  width: 3em;
+  
+}
+.menu ul {
+  list-style-type: none;
+  margin: auto 0;
+  padding: 0;
+  width: 3em;
+  align-items: center;
+
+}
+
+.menu li a {
+  display: block;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: all;
+  transition-duration: 100ms;
+  cursor:pointer;
+}
+
+.menu li a.active {
+  background-color: hsla(0, 0%, 100%, 0.37);
+  mix-blend-mode: screen;
+}
+
+.menu li a:hover:not(.active) {
+  background-color: hsla(0, 0%, 100%, 0.199);
+  mix-blend-mode: screen;
+}
+
+.menu li a span {
+  width: max-content;
+  position: absolute;
+  display: block;
+  content:  attr(title);
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--secondary);
+  transition: all;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+  left: 2rem;
+  margin-top: -1.3rem;
+  padding: 0.1rem 1rem;
+  border-radius: 1em;
+  transform: scaleX(0.8);
+  transform-origin: 0;
+}
+.menu li a:hover span {
+  background-color: var(--main);
+  visibility: visible;
+  opacity: 1;
+  left: 3.4rem;
+  transform: scaleX(1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  display: block;
+}
+
+.section {
+  display: flex;
+  margin-left: 2em;
+  scroll-snap-align: start;
+  align-items: center;
+  justify-content: center;
+}
+
+.section h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.section h1 {
+  margin: 0;
+  color: var(--main);
+  font-size: clamp(1.2rem, calc(1.2rem + 1vw), 2.5rem);
+}
+.section h2 {
+  color: var(--secondary);
+  margin: 0;
+  font-size: clamp(1rem, calc(1rem + 1vw), 1.5rem);
+}
+.section h3 {
+  font-weight: 400;
+  margin: 3em 0 0 0;
+}
+.section p {
+  margin: 0 0 1em 0;
+  padding: 0;
+  line-height: 180%;
+  font-size: clamp(0.7rem, calc(0.7rem + 0.3vw), 1rem);
+}
+.section ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+}
+.section li {
+  font-size: clamp(0.7rem, calc(0.7rem + 0.3vw), 1rem);
+  display: inline;
+}
+
+.section ul li:not(:last-child):after {
+  content: " \2022";
+}
+
+.leftBio {
+  max-width: 50vh;
+  padding: 2em 4em;
+  align-items: center;
+}
+
+.rightBio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 6rem);
+  flex-grow: 1;
+  background-color: white;
+  padding: 3rem;
+  grid-gap: 1em;
+}
+
+.webChart {
+  width: 40vw;
+}
+
+
+.leftDiscription {
+  max-width: 35vh;
+  padding: 2em 4em;
+}
+.rightImages {
+  height: calc(100vh - 6rem);
+  flex-grow: 1;
+  background-color: whitesmoke;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 1em;
+}
+
+.rightImages > div {
+  background-color: white;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  min-height: 0;
+  min-width: 0;
+}
+.rightImages img {
+  width: 100%;
+  height: 100%;
+  object-fit: scale-down;
+  margin: auto;
+  min-width: 0;
+  min-height: 0;
+  image-rendering: optimizeQuality;
+}
+
+.proposalImage1 {
+  grid-column: span 5;
+}
+.proposalImage2 {
+  grid-column: span 7;
+  grid-row: span 3;
+}
+.proposalImage3 {
+  grid-column: span 5;
+}
+.proposalImage4 {
+  grid-column: span 5;
+}
+.proposalImage5 {
+  grid-column: span 6;
+}
+.proposalImage6 {
+  grid-column: span 6;
+}
+
+
+.playbookImage1 {
+  grid-column: span 7;
+  grid-row: span 3;
+}
+.playbookImage2 {
+  grid-column: span 5;
+}
+.playbookImage3 {
+  grid-column: span 5;
+}
+.playbookImage4 {
+  grid-column: span 5;
+}
+
+
+.boothImage1 {
+  grid-column: span 12;
+}
+
+
+.rpImage1 {
+  grid-column: span 7;
+}
+.rpImage2 {
+  grid-column: span 3;
+}
+.rpImage3 {
+  grid-column: span 2;
+}
+
+
+.mapImage1{
+  grid-column: span 12;
+}
+
+
+.yaleImage1{
+  grid-column: span 8;
+}
+.yaleImage2{
+  grid-column: span 4;
+}
+.yaleImage3{
+  grid-column: span 3;
+  grid-row: span 2;
+}
+.yaleImage4{
+  grid-column: span 9;
+  grid-row: span 3;
+}
+.yaleImage5{
+  grid-column: span 3;
+}
+
+
+.cmImage1 {
+  grid-column: span 12;  
+  grid-row: span 2;
+}
+.cmImage2 {
+  grid-column: span 4;
+}
+.cmImage3 {
+  grid-column: span 4;
+}
+.cmImage4 {
+  grid-column: span 4;
+}
+
+.logoImage{
+  grid-column: span 4;
+}
+
+
+
+.jourenyImage1{
+  grid-area: 1 / 1 / 9 / 10;
+  z-index: 1;
+}
+.jourenyImage2{
+  grid-area: 5 / 4 / 13 / 13;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 1100px) {
+  .rightImages {
+    height: auto;
+    display: block;
+    padding: 2em;
+  }
+  .rightImages > div {
+    margin-bottom: 1em;
+  }
+  .section{
+    align-items:normal;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .section {
+    display: block;
+  }
+  .leftDiscription, .leftBio {
+    max-width: none;
+  }
+  .rightImages, .rightBio {
+    padding-right: 1em;
+    height: auto;
+  }
+  .webChart {
+    width: 90vw;
+  }
+  
+}
