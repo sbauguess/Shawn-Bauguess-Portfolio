@@ -3,7 +3,24 @@
   --main: darkblue;
   --secondary: darkorchid;
 }
-
+.menu li a span {
+  width: max-content;
+  position: absolute;
+  display: block;
+  content:  attr(title);
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--secondary);
+  transition: all;
+  transition-duration: 300ms;
+  transition-delay: 200ms;
+  left: 2rem;
+  margin-top: -1.3rem;
+  padding: 0.1rem 1rem;
+  border-radius: 1em;
+  transform: scaleX(0.8);
+  transform-origin: 0;
+}
 body {
   margin: 0;
   padding: 0;
@@ -47,24 +64,7 @@ body {
   mix-blend-mode: screen;
 }
 
-.menu li a span {
-  width: max-content;
-  position: absolute;
-  display: block;
-  content:  attr(title);
-  visibility: hidden;
-  opacity: 0;
-  background-color: var(--secondary);
-  transition: all;
-  transition-duration: 300ms;
-  transition-delay: 200ms;
-  left: 2rem;
-  margin-top: -1.3rem;
-  padding: 0.1rem 1rem;
-  border-radius: 1em;
-  transform: scaleX(0.8);
-  transform-origin: 0;
-}
+
 .menu li a:hover span {
   background-color: var(--main);
   visibility: visible;
